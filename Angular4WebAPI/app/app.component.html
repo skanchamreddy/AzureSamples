@@ -1,0 +1,26 @@
+﻿<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+    <h1>
+        Welcome to {{title}}!
+    </h1>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <app-file-upload projectId="100"
+                         sectionId="107"
+                         maxFiles="4"
+                         maxSize="2"
+                         fileExt="JPG, GIF, PNG"
+                         (uploadStatus)="refreshImages($event)">
+        </app-file-upload>
+    </div>
+</div>
+<br>
+
+<div class="well" *ngFor="let img of images">
+    
+    <img [src]="img.ImagePath"
+         class="img-thumbnail"
+         alt="">
+</div>
